@@ -3,7 +3,13 @@ guid: d4290a2498fc81b4894976a73ba08e84
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerShoot: {fileID: 8300000, guid: 1b59f827764d5cc4499f2d344331a552, type: 3}
+  - asteroidExplosion: {fileID: 8300000, guid: 2571f2c2134216e47ab26f2bede64613, type: 3}
+  - playerDamage: {fileID: 8300000, guid: 3bab26448037b9c46a50fcedfca93167, type: 3}
+  - playerExplosion: {fileID: 8300000, guid: 4351db650c5e01b4193bf89a89e62e69, type: 3}
+  - BgMusicGameplay: {fileID: 8300000, guid: a719770233108d6448c9b7e38216e5ca, type: 3}
+  - BgMusicTitleScreen: {fileID: 8300000, guid: a15fe7e9dbae0a44e9e474421cf1f619, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

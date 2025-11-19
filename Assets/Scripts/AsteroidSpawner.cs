@@ -12,10 +12,25 @@ public class AsteroidSpawner : MonoBehaviour
     public int waveWait;
     public int waveCount = 0;
 
-    public bool spawn = true;
-       
+    public SFXManager sfxManager;
+    private AudioSource backgroundMusic;
+    public float tempoIncreasePercent = 0.05f;
 
-    void Start()
+    public bool spawn = true;
+
+    private void Awake()
+    {
+        if (sfxManager == null)
+        {
+            if (sfxManager == null)
+                sfxManager = FindObjectOfType<SFXManager>();
+
+            if (sfxManager != null)
+                backgroundMusic = sfxManager.GetBgMusicAudioSource();
+        }
+    }
+
+void Start()
     {        
         StartCoroutine( SpawnWaves() );        
     }
@@ -32,6 +47,9 @@ public class AsteroidSpawner : MonoBehaviour
                 waveCount = w;
                 hazardCount = hazardCount + 2;
                 float hazardSpeed = -5 + (-1f * waveCount);
+
+                if (backgroundMusic != null)
+                    backgroundMusic.pitch += tempoIncreasePercent;
 
                 for (int i = 0; i < hazardCount; i++)
                 {
